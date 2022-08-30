@@ -5,7 +5,7 @@ This is a [Pinegrow](https://pinegrow.com/) project with a relatively unstyled v
 
 ## Interactions Logic
 ### On Load: . accordion-content
-	- Hide at start
+- Hide at start
 
 ### On click: .accordion-content (Hides content)
 - Apply to: .accordion-content
