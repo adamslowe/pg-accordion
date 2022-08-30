@@ -9,7 +9,7 @@ This is a [Pinegrow](https://pinegrow.com/) project with a relatively unstyled v
 
 ### On click: .accordion-content (Hides content)
 - Apply to: .accordion-content
-	- Remove display:none on .accordion-content
+	- Remove display:none
 - Apply to: .accordion-button
 	- Set aria-expanded=false
 
@@ -25,3 +25,31 @@ This is a [Pinegrow](https://pinegrow.com/) project with a relatively unstyled v
 	- height:auto
 - Tween: .accordion-icon
 	- transform: rotateZ(180deg)
+
+### Apply to many is set on .accordion-header 
+
+## WordPress Block Actions
+Then, I create two WordPress blocks; one for the wrapper Accordion and another block for each accordion item. 
+
+### Accordion Wrapper
+- Includes an empty div with a Block Inner Content that only accepts accordion item blocks
+
+### Accordion Item
+- Only usable on parent accordion wrapper blocks
+- Sets an accordion_item_id variable for the accordion item ID suffix
+
+#### Accordion Item - Header
+- Appends the item ID suffix to the header ID (e.g., accordion-header-{{accordion_item_id}})
+
+#### Accordion Item - Button
+- Appends the item ID suffix to the aria-controls attribute (e.g., accordion-content-{{accordion_item_id}})
+
+#### Accordion Item - spam
+- Allows the content of the H3 Accordion Header to be set on the block
+
+### Accordion Content
+- Appends the item ID suffix to the content ID (e.g., accordion-content-{{accordion_item_id}})
+- Appends the item ID suffix to the aria-labelledby attribute (e.g., accordion-header-{{accordion_item_id}})
+
+### Accordion Content - div
+- Allows Block editor content of any type
