@@ -20,8 +20,8 @@ This is a [Pinegrow](https://pinegrow.com/) project with a relatively unstyled v
 	- height:0
 - Set: .accordion-button
 	- aria-expanded=true
--Tween: .accordion-content
+- Tween: .accordion-content
 	- auto opacity: 1
 	- height:auto
--Tween: .accordion-icon
+- Tween: .accordion-icon
 	- transform: rotateZ(180deg)
