@@ -51,5 +51,5 @@ Then, I create two WordPress blocks; one for the wrapper Accordion and another b
 - Appends the item ID suffix to the content ID (e.g., accordion-content-{{accordion_item_id}})
 - Appends the item ID suffix to the aria-labelledby attribute (e.g., accordion-header-{{accordion_item_id}})
 
-### Accordion Content - div
+#### Accordion Content - div
 - Allows Block editor content of any type
