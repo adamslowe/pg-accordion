@@ -36,20 +36,20 @@ Then, I create two WordPress blocks; one for the wrapper Accordion and another b
 
 ### Accordion Item
 - Only usable on parent accordion wrapper blocks
-- Sets an accordion_item_id variable for the accordion item ID suffix
+- Sets an {{accordion_item_id}} variable for the accordion item ID suffix. Some day I’ll make this happen programmatically, for now it’s set manually on each accordion item block in the WP block editor. 
 
 #### Accordion Item - Header
-- Appends the item ID suffix to the header ID (e.g., accordion-header-{{accordion_item_id}})
+- Sets the ID to accordion-header-{{accordion_item_id}})
 
 #### Accordion Item - Button
-- Appends the item ID suffix to the aria-controls attribute (e.g., accordion-content-{{accordion_item_id}})
+- Sets aria-controls = accordion-content-{{accordion_item_id}}
 
 #### Accordion Item - spam
-- Allows the content of the H3 Accordion Header to be set on the block
+- Allows the content of the H3 Accordion Header to be set in the block editor
 
 ### Accordion Content
-- Appends the item ID suffix to the content ID (e.g., accordion-content-{{accordion_item_id}})
-- Appends the item ID suffix to the aria-labelledby attribute (e.g., accordion-header-{{accordion_item_id}})
+- Sets ID to accordion-content-{{accordion_item_id}}
+- Sets aria-labelledby = accordion-header-{{accordion_item_id}}
 
 #### Accordion Content - div
 - Allows Block editor content of any type
