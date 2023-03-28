@@ -1,0 +1,107 @@
+.accordion-wrapper {
+    margin-bottom: 1rem;
+}
+
+.accordion-header h3 {
+    margin: 0;
+}
+
+.accordion-button {
+    background-color: white;
+    border: 1px solid #000000;
+    border-bottom: 0px solid #000000;
+    display: flex;
+    font-weight: bolder;
+    text-align: left;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+}
+
+.accordion-button:hover {
+    background-color: gray;
+}
+
+.accordion-button span {
+    font-size: 1.5rem;
+}
+
+.accordion-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.tabs__tablist {
+    display: flex;
+    margin-bottom: -1px;
+    margin-top: 0;
+    padding: 0;
+    resize: both;
+}
+
+.tabs__tablist button {
+    padding: 0.625rem 1.25rem;
+    border: 1px solid #000000;
+    border-bottom: 0 solid #000000;
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    display: flex;
+    background-color: transparent;
+
+    /* width: 100% */
+}
+
+.tabs__tablist li {
+    list-style-type: none;
+}
+
+.tab-block__tabpanels {
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-left-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+
+.tab-block__tabpanels section {
+    padding: 2rem;
+}
+
+.tab-block__tabpanels h2 {
+    font-size: 1.25rem;
+    font-weight: bolder;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.tab-block__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-block__wrapper--vertical {
+    flex-direction: row;
+}
+
+.tabs__tablist--vertical {
+    display: grid;
+    flex-direction: column;
+    align-items: stretch;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.tabs__tablist--vertical button {
+    padding: 1.25rem 0.625rem;
+    border: 1px solid #000000;
+    border-right: 0 solid #000000;
+    border-radius: 0.375rem 0 0 0.375rem;
+    height: 100%;
+    width: 100%;
+}
+
+.tab-block__tabpanels--vertical {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.375rem;
+}

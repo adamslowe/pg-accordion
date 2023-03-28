@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="description" content=""> 
+        <meta name="author" content=""> 
+        <title>New page</title>         
+        <link href="css/style.css" rel="stylesheet"> 
+        <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>     
+    <body>
+        <section style="padding: 2rem;">
+            <!-- Tabs -->
+            <div>
+                <div x-data="{
+        selectedId: null,
+        init() {
+            // Set the first available tab on the page on page load.
+            this.$nextTick(() => this.select(this.$id('tab', 1)))
+        },
+        select(id) {
+            this.selectedId = id
+        },
+        isSelected(id) {
+            return this.selectedId === id
+        },
+        whichChild(el, parent) {
+            return Array.from(parent.children).indexOf(el) + 1
+        }
+    }" x-id="['tab']" class="tab-block__wrapper tabs-wrapper">
+                    <!-- Tab List -->
+                    <ul x-ref="tablist" @keydown.right.prevent.stop="$focus.wrap().next()" @keydown.home.prevent.stop="$focus.first()" @keydown.page-up.prevent.stop="$focus.first()" @keydown.left.prevent.stop="$focus.wrap().prev()" @keydown.end.prevent.stop="$focus.last()" @keydown.page-down.prevent.stop="$focus.last()" role="tablist" class="tabs__tablist">
+                        <!-- Tab -->
+                        <li>
+                            <button :id="$id('tab', whichChild($el.parentElement, $refs.tablist))" @click="select($el.id)" @mousedown.prevent @focus="select($el.id)" type="button" :tabindex="isSelected($el.id) ? 0 : -1" :aria-selected="isSelected($el.id)" :class="isSelected($el.id) ? 'border-gray-200 bg-white' : 'border-transparent'" role="tab">Tab 1</button>
+                        </li>
+                        <li>
+                            <button :id="$id('tab', whichChild($el.parentElement, $refs.tablist))" @click="select($el.id)" @mousedown.prevent @focus="select($el.id)" type="button" :tabindex="isSelected($el.id) ? 0 : -1" :aria-selected="isSelected($el.id)" :class="isSelected($el.id) ? 'border-gray-200 bg-white' : 'border-transparent'" role="tab">Tab 2</button>
+                        </li>
+                    </ul>
+                    <!-- Panels -->
+                    <div role="tabpanels" class="tab-block__tabpanels">
+                        <!-- Panel -->
+                        <section x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))" :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" role="tabpanel">
+                            <h2>Tab 1 Content</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quo sequi error quibusdam quas temporibus animi sapiente eligendi! Deleniti minima velit recusandae iure.</p>
+                            <button>Something focusable</button>
+                        </section>
+                        <section x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))" :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" role="tabpanel">
+                            <h2>Tab 2 Content</h2>
+                            <p>Fugiat odit alias, eaque optio quas nobis minima reiciendis voluptate dolorem nisi facere debitis ea laboriosam vitae omnis ut voluptatum eos. Fugiat?</p>
+                            <button>Something else focusable</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section data-empty-placeholder style="padding: 2rem;"></section>
+        <section style="padding: 2rem;">
+            <!-- Tabs -->
+            <div>
+                <div x-data="{
+        selectedId: null,
+        init() {
+            // Set the first available tab on the page on page load.
+            this.$nextTick(() => this.select(this.$id('tab', 1)))
+        },
+        select(id) {
+            this.selectedId = id
+        },
+        isSelected(id) {
+            return this.selectedId === id
+        },
+        whichChild(el, parent) {
+            return Array.from(parent.children).indexOf(el) + 1
+        }
+    }" x-id="['tab']" class="tab-block__wrapper tab-block__wrapper--vertical tabs-wrapper">
+                    <!-- Tab List -->
+                    <ul x-ref="tablist" @keydown.right.prevent.stop="$focus.wrap().next()" @keydown.home.prevent.stop="$focus.first()" @keydown.page-up.prevent.stop="$focus.first()" @keydown.left.prevent.stop="$focus.wrap().prev()" @keydown.end.prevent.stop="$focus.last()" @keydown.page-down.prevent.stop="$focus.last()" role="tablist" class="tabs__tablist tabs__tablist--vertical">
+                        <!-- Tab -->
+                        <li>
+                            <button :id="$id('tab', whichChild($el.parentElement, $refs.tablist))" @click="select($el.id)" @mousedown.prevent @focus="select($el.id)" type="button" :tabindex="isSelected($el.id) ? 0 : -1" :aria-selected="isSelected($el.id)" :class="isSelected($el.id) ? 'border-gray-200 bg-white' : 'border-transparent'" role="tab">Tab 1</button>
+                        </li>
+                        <li>
+                            <button :id="$id('tab', whichChild($el.parentElement, $refs.tablist))" @click="select($el.id)" @mousedown.prevent @focus="select($el.id)" type="button" :tabindex="isSelected($el.id) ? 0 : -1" :aria-selected="isSelected($el.id)" :class="isSelected($el.id) ? 'border-gray-200 bg-white' : 'border-transparent'" role="tab">Tab 2</button>
+                        </li>
+                    </ul>
+                    <!-- Panels -->
+                    <div role="tabpanels" class="tab-block__tabpanels tab-block__tabpanels--vertical">
+                        <!-- Panel -->
+                        <section x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))" :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" role="tabpanel">
+                            <h2>Tab 1 Content</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quo sequi error quibusdam quas temporibus animi sapiente eligendi! Deleniti minima velit recusandae iure.</p>
+                            <button>Something focusable</button>
+                        </section>
+                        <section x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))" :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" role="tabpanel">
+                            <h2>Tab 2 Content</h2>
+                            <p>Fugiat odit alias, eaque optio quas nobis minima reiciendis voluptate dolorem nisi facere debitis ea laboriosam vitae omnis ut voluptatum eos. Fugiat?</p>
+                            <button>Something else focusable</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Alpine Plugins -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+        <!-- Alpine Core -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>         
+    </body>     
+</html>
